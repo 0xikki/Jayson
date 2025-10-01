@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Basic colors */
+    --background: 0 0% 100%;
+    --foreground: 210 20% 15%; /* Improved readability */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    /* Healthcare/Recovery Theme Colors - WCAG AA Compliant */
+    --primary: 203 89% 53%; /* Medical blue - trustworthy, calming */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 162 63% 41%; /* Medical teal - healing, stability */
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 45 93% 58%; /* Warm amber - hope, attention */
+    --accent-foreground: 210 20% 15%; /* Dark text for better contrast */
+
+    --success: 142 69% 58%; /* Medical green - positive outcomes */
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%; /* Medical orange - caution */
+    --warning-foreground: 0 0% 100%;
+
+    --info: 203 89% 53%; /* Same as primary for consistency */
+    --info-foreground: 0 0% 100%;
+
+    --destructive: 0 65% 51%; /* Medical red - emergency */
+    --destructive-foreground: 0 0% 100%;
+
+    --muted: 210 40% 98%;
+    --muted-foreground: 210 20% 50%; /* Improved contrast */
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 15%;
+
+    --ring: 203 89% 53%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 90%; /* Slightly dimmed for better readability */
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+
+    /* Dark mode healthcare colors */
+    --primary: 203 89% 60%; /* Lighter for dark backgrounds */
+    --primary-foreground: 222.2 84% 4.9%;
+
+    --secondary: 162 63% 50%; /* Adjusted for dark mode */
+    --secondary-foreground: 222.2 84% 4.9%;
+
+    --accent: 45 93% 65%; /* Higher luminance for dark mode */
+    --accent-foreground: 222.2 84% 4.9%;
+
+    --success: 142 69% 65%;
+    --success-foreground: 222.2 84% 4.9%;
+
+    --warning: 38 92% 60%;
+    --warning-foreground: 222.2 84% 4.9%;
+
+    --info: 203 89% 60%;
+    --info-foreground: 222.2 84% 4.9%;
+
+    --destructive: 0 65% 60%;
+    --destructive-foreground: 222.2 84% 4.9%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 90%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 90%;
+
+    --ring: 203 89% 60%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-inter), system-ui, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  /* Custom gradient utilities for healthcare theme */
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  }
+  
+  .gradient-healing {
+    background: linear-gradient(135deg, hsl(var(--secondary) / 0.1) 0%, hsl(var(--accent) / 0.1) 100%);
+  }
+  
+  .gradient-warm {
+    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--destructive)) 100%);
+  }
+}
+
+/* Educational/Slow Learners Theme - WCAG AA Compliant */
+:root {
+  --sl-primary: 25 85% 53%; /* Warm terracotta - creative, encouraging */
+  --sl-primary-foreground: 0 0% 100%;
+
+  --sl-secondary: 95 38% 49%; /* Sage green - growth, learning */
+  --sl-secondary-foreground: 0 0% 100%;
+
+  --sl-accent: 45 76% 58%; /* Golden yellow - achievement, focus */
+  --sl-accent-foreground: 30 25% 15%; /* Dark text for contrast */
+
+  --sl-success: 142 69% 58%; /* Consistent green - progress */
+  --sl-success-foreground: 0 0% 100%;
+
+  --sl-warning: 38 92% 50%; /* Consistent orange - attention */
+  --sl-warning-foreground: 0 0% 100%;
+
+  --sl-info: 25 85% 53%; /* Same as primary */
+  --sl-info-foreground: 0 0% 100%;
+
+  --sl-destructive: 0 65% 51%; /* Consistent red - errors */
+  --sl-destructive-foreground: 0 0% 100%;
+
+  --sl-background: 48 33% 96%; /* Light warm beige */
+  --sl-foreground: 30 25% 20%; /* Warm dark brown - readable */
+
+  --sl-muted: 48 20% 90%;
+  --sl-muted-foreground: 30 15% 40%;
+
+  --sl-card: 0 0% 100%;
+  --sl-card-foreground: 30 25% 20%;
+
+  --sl-border: 48 20% 85%;
+  --sl-input: 48 20% 85%;
+  --sl-ring: 25 85% 53%;
+}
