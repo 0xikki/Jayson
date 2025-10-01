@@ -93,19 +93,19 @@ export default function ResourcesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
       {/* Hero Section */}
       <section className="px-4 py-24 lg:py-32">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="w-16 h-16 mx-auto mb-8 bg-blue-50 rounded-2xl flex items-center justify-center transition-all duration-300 hover:bg-blue-100">
-            <Heart className="w-8 h-8 text-blue-600" />
+          <div className="w-16 h-16 mx-auto mb-8 bg-blue-50 dark:bg-blue-950/50 rounded-2xl flex items-center justify-center transition-all duration-300 hover:bg-blue-100 dark:hover:bg-blue-900/50">
+            <Heart className="w-8 h-8 text-blue-600 dark:text-blue-400" />
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-light text-slate-900 mb-8 tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-light text-foreground mb-8 tracking-tight">
             Resources & Support
           </h1>
 
-          <p className="text-xl md:text-2xl text-slate-600 font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed max-w-2xl mx-auto">
             Find help, support groups, and treatment centers in the Philippines. You don&apos;t have to face this alone.
           </p>
         </div>
@@ -115,31 +115,31 @@ export default function ResourcesPage() {
       <section className="px-4 py-16">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-light text-slate-900 mb-6 tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-light text-foreground mb-6 tracking-tight">
               Emergency Hotlines
             </h2>
-            <p className="text-lg md:text-xl text-slate-600 font-light">
+            <p className="text-lg md:text-xl text-muted-foreground font-light">
               Reach out anytime, day or night
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             {hotlines.map((hotline, index) => (
-              <Card key={index} className="border-slate-200 bg-white/80 backdrop-blur-sm transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1">
+              <Card key={index} className="border-border bg-card/80 backdrop-blur-sm transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors hover:bg-blue-100">
-                      <Phone className="text-blue-600" size={24} />
+                      <Phone className="text-blue-600 dark:text-blue-400" size={24} />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-medium text-slate-900 mb-2">{hotline.name}</h3>
+                      <h3 className="text-xl font-medium text-foreground mb-2">{hotline.name}</h3>
                       <a
                         href={`tel:+63${hotline.phone.replace(/^0/, '').replace(/-/g, '')}`}
-                        className="text-2xl font-light text-blue-600 block mb-2 hover:underline"
+                        className="text-2xl font-light text-blue-600 dark:text-blue-400 block mb-2 hover:underline"
                       >
                         {hotline.phone}
                       </a>
-                      <div className="flex items-center gap-4 text-sm text-slate-600">
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
                         <span className="font-medium">{hotline.available}</span>
                         <span>•</span>
                         <span>{hotline.contact}</span>
@@ -154,40 +154,40 @@ export default function ResourcesPage() {
       </section>
 
       {/* Support Groups */}
-      <section className="px-4 py-20 bg-slate-50/50">
+      <section className="px-4 py-20 bg-muted/50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-light text-slate-900 mb-6 tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-light text-foreground mb-6 tracking-tight">
               Support Groups
             </h2>
-            <p className="text-lg md:text-xl text-slate-600 font-light">
+            <p className="text-lg md:text-xl text-muted-foreground font-light">
               Connect with others who understand your journey
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {supportGroups.map((group, index) => (
-              <Card key={index} className="border-slate-200 bg-white/80 backdrop-blur-sm transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1">
+              <Card key={index} className="border-border bg-card/80 backdrop-blur-sm transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1">
                 <CardHeader>
                   <div className="w-12 h-12 mx-auto mb-4 bg-blue-50 rounded-2xl flex items-center justify-center transition-colors hover:bg-blue-100">
-                    <Users className="text-blue-600" size={24} />
+                    <Users className="text-blue-600 dark:text-blue-400" size={24} />
                   </div>
-                  <CardTitle className="text-xl text-center text-slate-900">{group.name}</CardTitle>
+                  <CardTitle className="text-xl text-center text-foreground">{group.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3 text-sm">
                     <div className="flex items-start gap-2">
-                      <MapPin className="text-blue-600 flex-shrink-0 mt-0.5" size={16} />
+                      <MapPin className="text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" size={16} />
                       <div>
-                        <p className="font-medium text-slate-900">{group.location}</p>
-                        <p className="text-slate-600">{group.type}</p>
+                        <p className="font-medium text-foreground">{group.location}</p>
+                        <p className="text-muted-foreground">{group.type}</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
-                      <Phone className="text-blue-600 flex-shrink-0 mt-0.5" size={16} />
+                      <Phone className="text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" size={16} />
                       <div>
-                        <p className="text-slate-600">{group.schedule}</p>
-                        <p className="text-slate-600">{group.contact}</p>
+                        <p className="text-muted-foreground">{group.schedule}</p>
+                        <p className="text-muted-foreground">{group.contact}</p>
                       </div>
                     </div>
                   </div>
@@ -202,23 +202,23 @@ export default function ResourcesPage() {
       <section className="px-4 py-20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-light text-slate-900 mb-6 tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-light text-foreground mb-6 tracking-tight">
               Treatment Centers
             </h2>
-            <p className="text-lg md:text-xl text-slate-600 font-light">
+            <p className="text-lg md:text-xl text-muted-foreground font-light">
               Professional treatment facilities across the Philippines
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {treatmentCenters.map((center, index) => (
-              <Card key={index} className="border-slate-200 bg-white/80 backdrop-blur-sm transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1">
+              <Card key={index} className="border-border bg-card/80 backdrop-blur-sm transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1">
                 <CardHeader>
                   <div className="w-12 h-12 mx-auto mb-4 bg-blue-50 rounded-2xl flex items-center justify-center transition-colors hover:bg-blue-100">
-                    <Building2 className="text-blue-600" size={24} />
+                    <Building2 className="text-blue-600 dark:text-blue-400" size={24} />
                   </div>
-                  <CardTitle className="text-xl text-center text-slate-900">{center.name}</CardTitle>
-                  <div className="flex items-center justify-center gap-2 text-sm text-slate-600">
+                  <CardTitle className="text-xl text-center text-foreground">{center.name}</CardTitle>
+                  <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
                     <MapPin size={14} />
                     <span>{center.location}</span>
                   </div>
@@ -226,19 +226,19 @@ export default function ResourcesPage() {
                 <CardContent>
                   <div className="space-y-3">
                     <div>
-                      <h4 className="text-sm font-medium text-slate-900 mb-2">Services:</h4>
+                      <h4 className="text-sm font-medium text-foreground mb-2">Services:</h4>
                       <ul className="space-y-1.5">
                         {center.services.map((service, serviceIndex) => (
-                          <li key={serviceIndex} className="flex items-center text-sm text-slate-600">
+                          <li key={serviceIndex} className="flex items-center text-sm text-muted-foreground">
                             <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2"></div>
                             {service}
                           </li>
                         ))}
                       </ul>
                     </div>
-                    <div className="pt-3 border-t border-slate-100">
-                      <div className="flex items-center gap-2 text-sm text-slate-600">
-                        <Phone size={14} className="text-blue-600" />
+                    <div className="pt-3 border-t border-border">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Phone size={14} className="text-blue-600 dark:text-blue-400" />
                         <span>{center.contact}</span>
                       </div>
                     </div>
@@ -251,36 +251,36 @@ export default function ResourcesPage() {
       </section>
 
       {/* Online Resources */}
-      <section className="px-4 py-20 bg-slate-50/50">
+      <section className="px-4 py-20 bg-muted/50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-light text-slate-900 mb-6 tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-light text-foreground mb-6 tracking-tight">
               Online Resources
             </h2>
-            <p className="text-lg md:text-xl text-slate-600 font-light">
+            <p className="text-lg md:text-xl text-muted-foreground font-light">
               Access support and information from anywhere
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {onlineResources.map((resource, index) => (
-              <Card key={index} className="border-slate-200 bg-white/80 backdrop-blur-sm transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1">
+              <Card key={index} className="border-border bg-card/80 backdrop-blur-sm transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors hover:bg-blue-100">
-                      <Globe className="text-blue-600" size={24} />
+                      <Globe className="text-blue-600 dark:text-blue-400" size={24} />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-medium text-slate-900 mb-2">{resource.name}</h3>
+                      <h3 className="text-lg font-medium text-foreground mb-2">{resource.name}</h3>
                       <a
                         href={`https://${resource.url}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-600 text-sm hover:underline block mb-2 font-light"
+                        className="text-blue-600 dark:text-blue-400 text-sm hover:underline block mb-2 font-light"
                       >
                         {resource.url}
                       </a>
-                      <p className="text-sm text-slate-600 leading-relaxed">{resource.description}</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{resource.description}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -293,12 +293,12 @@ export default function ResourcesPage() {
       {/* Footer CTA */}
       <section className="px-4 py-20">
         <div className="max-w-4xl mx-auto">
-          <Card className="border-blue-200 bg-gradient-to-br from-blue-50/50 to-slate-50/50 backdrop-blur-sm">
+          <Card className="border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50/50 to-slate-50/50 backdrop-blur-sm">
             <CardContent className="p-10 text-center">
-              <h2 className="text-3xl md:text-4xl font-light text-slate-900 mb-6 tracking-tight">
+              <h2 className="text-3xl md:text-4xl font-light text-foreground mb-6 tracking-tight">
                 Need Help Right Now?
               </h2>
-              <p className="text-lg text-slate-600 font-light mb-8 max-w-2xl mx-auto">
+              <p className="text-lg text-muted-foreground font-light mb-8 max-w-2xl mx-auto">
                 Don&apos;t wait to get the support you need. Reach out today and take the first step towards recovery.
               </p>
               <a

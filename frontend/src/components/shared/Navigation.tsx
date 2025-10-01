@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { BRAND_NAME } from '@/constants/site';
 import { gamblingAddictionNav, slowLearnersNav } from '@/constants/navigation';
+import ThemeToggle from '@/components/shared/ThemeToggle';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,35 +23,35 @@ const Navigation = () => {
   const getNavClasses = () => {
     if (isHomePage) {
       return {
-        nav: 'bg-white/80 backdrop-blur-sm text-slate-900 shadow-sm sticky top-0 z-50 border-b border-slate-200/50',
-        brand: 'text-xl font-light hover:text-slate-600 transition-colors duration-200',
-        link: 'hover:text-slate-600 transition-colors duration-200 font-medium',
-        mobileMenu: 'md:hidden bg-white/95 backdrop-blur-sm rounded-b-lg border-b border-slate-200/50',
-        mobileLink: 'hover:text-slate-600 hover:bg-slate-50 block px-3 py-2 text-base font-medium transition-all duration-200 rounded-md'
+        nav: 'bg-background/80 backdrop-blur-sm text-foreground shadow-sm sticky top-0 z-50 border-b border-border',
+        brand: 'text-xl font-light hover:text-muted-foreground transition-colors duration-200',
+        link: 'hover:text-muted-foreground transition-colors duration-200 font-medium',
+        mobileMenu: 'md:hidden bg-background/95 backdrop-blur-sm rounded-b-lg border-b border-border',
+        mobileLink: 'hover:text-muted-foreground hover:bg-muted block px-3 py-2 text-base font-medium transition-all duration-200 rounded-md'
       };
     } else if (isGambling) {
       return {
-        nav: 'bg-blue-600 text-white shadow-lg sticky top-0 z-50',
-        brand: 'text-xl font-medium hover:text-blue-200 transition-colors duration-200',
-        link: 'hover:text-blue-200 transition-colors duration-200 font-medium',
-        mobileMenu: 'md:hidden bg-blue-600/95 backdrop-blur-sm rounded-b-lg',
-        mobileLink: 'hover:text-blue-200 hover:bg-blue-700/20 block px-3 py-2 text-base font-medium transition-all duration-200 rounded-md'
+        nav: 'bg-blue-600 dark:bg-blue-700 text-white shadow-lg sticky top-0 z-50',
+        brand: 'text-xl font-medium hover:text-blue-100 dark:hover:text-blue-200 transition-colors duration-200',
+        link: 'hover:text-blue-100 dark:hover:text-blue-200 transition-colors duration-200 font-medium',
+        mobileMenu: 'md:hidden bg-blue-600/95 dark:bg-blue-700/95 backdrop-blur-sm rounded-b-lg',
+        mobileLink: 'hover:text-blue-100 dark:hover:text-blue-200 hover:bg-blue-700/30 dark:hover:bg-blue-800/30 block px-3 py-2 text-base font-medium transition-all duration-200 rounded-md'
       };
     } else if (isSlowLearning) {
       return {
-        nav: 'bg-emerald-600 text-white shadow-lg sticky top-0 z-50',
-        brand: 'text-xl font-medium hover:text-emerald-200 transition-colors duration-200',
-        link: 'hover:text-emerald-200 transition-colors duration-200 font-medium',
-        mobileMenu: 'md:hidden bg-emerald-600/95 backdrop-blur-sm rounded-b-lg',
-        mobileLink: 'hover:text-emerald-200 hover:bg-emerald-700/20 block px-3 py-2 text-base font-medium transition-all duration-200 rounded-md'
+        nav: 'bg-emerald-600 dark:bg-emerald-700 text-white shadow-lg sticky top-0 z-50',
+        brand: 'text-xl font-medium hover:text-emerald-100 dark:hover:text-emerald-200 transition-colors duration-200',
+        link: 'hover:text-emerald-100 dark:hover:text-emerald-200 transition-colors duration-200 font-medium',
+        mobileMenu: 'md:hidden bg-emerald-600/95 dark:bg-emerald-700/95 backdrop-blur-sm rounded-b-lg',
+        mobileLink: 'hover:text-emerald-100 dark:hover:text-emerald-200 hover:bg-emerald-700/30 dark:hover:bg-emerald-800/30 block px-3 py-2 text-base font-medium transition-all duration-200 rounded-md'
       };
     } else {
       return {
-        nav: 'bg-white text-slate-900 shadow-sm sticky top-0 z-50 border-b border-slate-200',
-        brand: 'text-xl font-light hover:text-slate-600 transition-colors duration-200',
-        link: 'hover:text-slate-600 transition-colors duration-200 font-medium',
-        mobileMenu: 'md:hidden bg-white/95 backdrop-blur-sm rounded-b-lg border-b border-slate-200',
-        mobileLink: 'hover:text-slate-600 hover:bg-slate-50 block px-3 py-2 text-base font-medium transition-all duration-200 rounded-md'
+        nav: 'bg-background text-foreground shadow-sm sticky top-0 z-50 border-b border-border',
+        brand: 'text-xl font-light hover:text-muted-foreground transition-colors duration-200',
+        link: 'hover:text-muted-foreground transition-colors duration-200 font-medium',
+        mobileMenu: 'md:hidden bg-background/95 backdrop-blur-sm rounded-b-lg border-b border-border',
+        mobileLink: 'hover:text-muted-foreground hover:bg-muted block px-3 py-2 text-base font-medium transition-all duration-200 rounded-md'
       };
     }
   };
@@ -80,6 +81,7 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
+            <ThemeToggle />
             {(isGambling || isSlowLearning) && (
               <Button asChild variant={isHomePage ? 'default' : 'secondary'}>
                 <Link href={isGambling ? '/gambling/get-help' : '/slow-learning/support'} className="ml-4">
@@ -90,7 +92,8 @@ const Navigation = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={navClasses.link}

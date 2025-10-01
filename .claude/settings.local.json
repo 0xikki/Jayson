@@ -4,7 +4,12 @@
       "Bash(npm run lint)",
       "Bash(Remove-Item srccomponentsfeatureslandingHero.tsx)",
       "Bash(npm run build:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(cat:*)",
+      "Bash(for file in effects resources get-help)",
+      "Bash(do echo \"=== $file ===\")",
+      "Bash(grep:*)",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []
