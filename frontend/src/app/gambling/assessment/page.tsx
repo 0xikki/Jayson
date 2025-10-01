@@ -122,7 +122,7 @@ export default function AssessmentPage() {
             <Card className="border-blue-200 bg-blue-50/50 backdrop-blur-sm">
               <CardContent className="p-6">
                 <p className="text-sm text-slate-700 leading-relaxed">
-                  <strong>Note:</strong> If you answer "yes" to 3 or more of these questions, you may be experiencing problem gambling and should consider seeking professional help.
+                  <strong>Note:</strong> If you answer &quot;yes&quot; to 3 or more of these questions, you may be experiencing problem gambling and should consider seeking professional help.
                 </p>
               </CardContent>
             </Card>

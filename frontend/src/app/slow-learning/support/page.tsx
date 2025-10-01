@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
+import { Card, CardContent } from '@/components/ui/Card';
 import { governmentPrograms, ngos } from '@/constants/slowLearners';
 import { Building2, Users, ExternalLink, Heart } from 'lucide-react';
 

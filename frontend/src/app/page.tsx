@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { ArrowRight, Brain, GamepadIcon } from 'lucide-react';
-import { BRAND_NAME } from '@/constants/site';
 
 export default function Home() {
   return (

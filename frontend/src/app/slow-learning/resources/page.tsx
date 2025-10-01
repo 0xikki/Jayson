@@ -117,7 +117,7 @@ export default function SLResourcesPage() {
                   </li>
                   <li className="flex items-start group">
                     <div className="w-1.5 h-1.5 bg-emerald-600 rounded-full mr-3 mt-2 flex-shrink-0 transition-transform group-hover:scale-150"></div>
-                    <span className="text-slate-600 leading-relaxed">Encourage discussion about what they're learning</span>
+                    <span className="text-slate-600 leading-relaxed">Encourage discussion about what they&apos;re learning</span>
                   </li>
                 </ul>
               </CardContent>
