@@ -1,5 +1,7 @@
+'use client';
+
 import Link from 'next/link';
-import { Facebook, Twitter, Instagram, Mail } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Mail, Users } from 'lucide-react';
 import { BRAND_NAME } from '@/constants/site';
 
 const Footer = () => {
@@ -16,12 +18,21 @@ const Footer = () => {
     { href: "#contact", label: "Contact" },
   ];
 
+  const teamEmails = [
+    "joshuapalomaria708@gmail.com",
+    "pongcokenth@gmail.com",
+    "sebastianjamesandrei@gmail.com",
+    "wezleycayco28@gmail.com",
+    "Ortizluisjayson@gmail.com",
+    "elijahntvdd@gmail.com",
+  ];
+
   return (
     <footer className="bg-primary text-primary-foreground border-t border-primary-foreground/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-8 items-start">
           {/* About Section */}
-          <div className="md:col-span-5">
+          <div className="md:col-span-4">
             <h3 className="text-xl font-bold mb-4 text-primary-foreground">{BRAND_NAME}</h3>
             <p className="text-primary-foreground/80 text-sm leading-relaxed mb-3">
               A supportive platform providing resources and guidance for individuals facing personal challenges.
@@ -32,7 +43,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links Section */}
-          <div className="md:col-span-3">
+          <div className="md:col-span-2">
             <h3 className="text-xl font-bold mb-4 text-primary-foreground">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
@@ -49,8 +60,57 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Contact the Team Section */}
+          <div className="md:col-span-3">
+            <h3 className="text-xl font-bold mb-4 text-primary-foreground flex items-center">
+              <Users className="mr-2" size={20} />
+              Contact the Team
+            </h3>
+            <p className="text-primary-foreground/80 text-sm mb-3">
+              Have questions or feedback? Reach out to our development team:
+            </p>
+            <div className="space-y-2">
+              {teamEmails.slice(0, 3).map((email, index) => (
+                <a
+                  key={index}
+                  href={`mailto:${email}`}
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors duration-200 text-xs block truncate"
+                  title={email}
+                >
+                  {email}
+                </a>
+              ))}
+              <details className="group">
+                <summary className="text-primary-foreground/70 hover:text-primary-foreground cursor-pointer text-xs list-none group-open:hidden">
+                  Show more...
+                </summary>
+                <div className="space-y-2">
+                  {teamEmails.slice(3).map((email, index) => (
+                    <a
+                      key={index}
+                      href={`mailto:${email}`}
+                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors duration-200 text-xs block truncate"
+                      title={email}
+                    >
+                      {email}
+                    </a>
+                  ))}
+                  <button
+                    onClick={(e) => {
+                      const details = e.currentTarget.closest('details');
+                      if (details) details.open = false;
+                    }}
+                    className="text-primary-foreground/70 hover:text-primary-foreground text-xs"
+                  >
+                    Show less...
+                  </button>
+                </div>
+              </details>
+            </div>
+          </div>
+
           {/* Contact & Social Section */}
-          <div className="md:col-span-4">
+          <div className="md:col-span-3">
             <h3 className="text-xl font-bold mb-4 text-primary-foreground">Connect With Us</h3>
 
             {/* Social Media Icons */}
