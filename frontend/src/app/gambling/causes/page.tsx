@@ -104,7 +104,7 @@ const CausesPage = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-border bg-gradient-to-br from-blue-50/50 to-slate-50/50 backdrop-blur-sm transition-all duration-300 ease-out hover:shadow-xl">
+            <Card className="border-border bg-card/80 backdrop-blur-sm transition-all duration-300 ease-out hover:shadow-xl">
               <CardHeader>
                 <CardTitle className="text-xl text-foreground">Did You Know?</CardTitle>
               </CardHeader>
@@ -114,7 +114,7 @@ const CausesPage = () => {
                     <p className="text-muted-foreground leading-relaxed">
                       Studies show that people with gambling problems are 3-4 times more likely to suffer from mood disorders like depression and anxiety.
                     </p>
-                    <div className="bg-blue-100/50 p-6 rounded-xl border border-blue-200 dark:border-blue-800/50">
+                    <div className="bg-muted/50 p-6 rounded-xl border border-border">
                       <Heart className="text-blue-600 dark:text-blue-400 mb-3" size={24} />
                       <p className="text-muted-foreground leading-relaxed">
                         The brain&apos;s reward system releases dopamine during gambling, creating the same chemical response as substance abuse.
@@ -127,7 +127,7 @@ const CausesPage = () => {
                     <p className="text-muted-foreground leading-relaxed">
                       Genetic factors account for approximately 35-54% of the risk for developing gambling disorders, making it one of the most heritable mental health conditions.
                     </p>
-                    <div className="bg-blue-100/50 p-6 rounded-xl border border-blue-200 dark:border-blue-800/50">
+                    <div className="bg-muted/50 p-6 rounded-xl border border-border">
                       {React.createElement(causesData.biological.icon, {
                         className: "text-blue-600 dark:text-blue-400 mb-3",
                         size: 24
@@ -143,7 +143,7 @@ const CausesPage = () => {
                     <p className="text-muted-foreground leading-relaxed">
                       In the Philippines, the proliferation of online gambling and casinos has made gambling more accessible than ever before.
                     </p>
-                    <div className="bg-blue-100/50 p-6 rounded-xl border border-blue-200 dark:border-blue-800/50">
+                    <div className="bg-muted/50 p-6 rounded-xl border border-border">
                       {React.createElement(causesData.social.icon, {
                         className: "text-blue-600 dark:text-blue-400 mb-3",
                         size: 24

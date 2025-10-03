@@ -293,7 +293,7 @@ export default function ResourcesPage() {
       {/* Footer CTA */}
       <section className="px-4 py-20">
         <div className="max-w-4xl mx-auto">
-          <Card className="border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50/50 to-slate-50/50 backdrop-blur-sm">
+          <Card className="border-border bg-card/80 backdrop-blur-sm">
             <CardContent className="p-10 text-center">
               <h2 className="text-3xl md:text-4xl font-light text-foreground mb-6 tracking-tight">
                 Need Help Right Now?

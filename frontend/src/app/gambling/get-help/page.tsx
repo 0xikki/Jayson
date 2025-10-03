@@ -166,9 +166,9 @@ const GetHelpPage = () => {
 
           <div className="grid md:grid-cols-3 gap-6">
             {emergencyContacts.map((contact, index) => (
-              <Card key={index} className="border-blue-200 dark:border-blue-800 bg-white/80 backdrop-blur-sm transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1">
+              <Card key={index} className="border-border bg-card/80 backdrop-blur-sm transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1">
                 <CardContent className="pt-8 pb-8 text-center">
-                  <div className="w-12 h-12 mx-auto mb-4 bg-blue-50 rounded-2xl flex items-center justify-center">
+                  <div className="w-12 h-12 mx-auto mb-4 bg-blue-50 dark:bg-blue-950/50 rounded-2xl flex items-center justify-center">
                     <Phone className="text-blue-600 dark:text-blue-400" size={24} />
                   </div>
                   <h3 className="text-lg font-medium text-foreground mb-2">{contact.name}</h3>
@@ -332,7 +332,7 @@ const GetHelpPage = () => {
       {/* Progress Tracker */}
       <section className="px-4 py-20">
         <div className="max-w-4xl mx-auto">
-          <Card className="border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50/50 to-slate-50/50 backdrop-blur-sm">
+          <Card className="border-border bg-card/80 backdrop-blur-sm">
             <CardContent className="p-10 text-center">
               <h2 className="text-3xl md:text-4xl font-light text-foreground mb-6 tracking-tight">
                 Your Recovery Progress
